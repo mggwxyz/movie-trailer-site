@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Fresh Tomatoes!</title>
+    <title>Movie Trailer Website</title>
 
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -13,6 +13,7 @@
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            background: #ed5050;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -29,13 +30,40 @@
             width: 100%;
             height: 100%;
         }
+        .movie-tile-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        @media screen and (max-width: 1200px) {
+            .movie-tile-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+         @media screen and (max-width: 600px) {
+            .movie-tile-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
         .movie-tile {
+            background: #ffffff;
+            transition: 0.5s;
+            transform: scale(1);
             margin-bottom: 20px;
-            padding-top: 20px;
+            padding: 20px;
+            box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.6);
+            border-radius: 8px;
         }
         .movie-tile:hover {
-            background-color: #EEE;
             cursor: pointer;
+            transform: scale(0.99);
+            box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.6);
+        }
+        .movie-title {
+            text-align: left;
+        }
+        .movie-overview {
+            text-align: left;
         }
         .scale-media {
             padding-bottom: 56.25%;
@@ -94,101 +122,120 @@
 
     <!-- Main Page Content -->
     <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brand" href="#">Movie Trailer Website</a>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="g9lmhBYB11U" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg" width="220" height="342">
-    <h2>Zootopia</h2>
+        <div class="movie-tile-container">
+            
+<div class="movie-tile text-center" data-trailer-youtube-id="g9lmhBYB11U" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg" width="220" height="342">
+    <h2 class="movie-title">Zootopia</h2>
+    <p class="movie-overview">Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="XFYWazblaUA" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg" width="220" height="342">
-    <h2>The Shape of Water</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="XFYWazblaUA" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg" width="220" height="342">
+    <h2 class="movie-title">The Shape of Water</h2>
+    <p class="movie-overview">An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="dxWvtMOGAhw" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/uxzzxijgPIY7slzFvMotPv8wjKA.jpg" width="220" height="342">
-    <h2>Black Panther</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="dxWvtMOGAhw" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/uxzzxijgPIY7slzFvMotPv8wjKA.jpg" width="220" height="342">
+    <h2 class="movie-title">Black Panther</h2>
+    <p class="movie-overview">After the events of Captain America: Civil War, King T'Challa returns home to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne from factions within his own country. When two foes conspire to destroy Wakanda, the hero known as Black Panther must team up with C.I.A. agent Everett K. Ross and members of the Dora Milaje, Wakandan special forces, to prevent Wakanda from being dragged into a world war.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="64-iSYVmMVY" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/coss7RgL0NH6g4fC2s5atvf3dFO.jpg" width="220" height="342">
-    <h2>The Maze Runner</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="64-iSYVmMVY" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/coss7RgL0NH6g4fC2s5atvf3dFO.jpg" width="220" height="342">
+    <h2 class="movie-title">The Maze Runner</h2>
+    <p class="movie-overview">Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow “runners” for a shot at escape.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ue80QwXMRHg" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg" width="220" height="342">
-    <h2>Thor: Ragnarok</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="ue80QwXMRHg" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg" width="220" height="342">
+    <h2 class="movie-title">Thor: Ragnarok</h2>
+    <p class="movie-overview">Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the prophecy of destruction to his homeworld and the end of Asgardian civilization, at the hands of an all-powerful new threat, the ruthless Hela.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="xlnPHQ3TLX8" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg" width="220" height="342">
-    <h2>Coco</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="xlnPHQ3TLX8" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg" width="220" height="342">
+    <h2 class="movie-title">Coco</h2>
+    <p class="movie-overview">Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="nJCc5HRPxYA" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/jjPJ4s3DWZZvI4vw8Xfi4Vqa1Q8.jpg" width="220" height="342">
-    <h2>Fifty Shades Freed</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="nJCc5HRPxYA" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/jjPJ4s3DWZZvI4vw8Xfi4Vqa1Q8.jpg" width="220" height="342">
+    <h2 class="movie-title">Fifty Shades Freed</h2>
+    <p class="movie-overview">Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="3cxixDgHUYw" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/eifGNCSDuxJeS1loAXil5bIGgvC.jpg" width="220" height="342">
-    <h2>Justice League</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="3cxixDgHUYw" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/eifGNCSDuxJeS1loAXil5bIGgvC.jpg" width="220" height="342">
+    <h2 class="movie-title">Justice League</h2>
+    <p class="movie-overview">Fuelled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne and Diana Prince assemble a team of metahumans consisting of Barry Allen, Arthur Curry and Victor Stone to face the catastrophic threat of Steppenwolf and the Parademons who are on the hunt for three Mother Boxes on Earth.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="KisPhy7T__Q" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg" width="220" height="342">
-    <h2>Annabelle: Creation</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="KisPhy7T__Q" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/tb86j8jVCVsdZnzf8I6cIi65IeM.jpg" width="220" height="342">
+    <h2 class="movie-title">Annabelle: Creation</h2>
+    <p class="movie-overview">Several years after the tragic death of their little girl, a dollmaker and his wife welcome a nun and several girls from a shuttered orphanage into their home, soon becoming the target of the dollmaker's possessed creation, Annabelle.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="mafJGrKvMIg" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/wridRvGxDqGldhzAIh3IcZhHT5F.jpg" width="220" height="342">
-    <h2>Sleight</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="mafJGrKvMIg" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/wridRvGxDqGldhzAIh3IcZhHT5F.jpg" width="220" height="342">
+    <h2 class="movie-title">Sleight</h2>
+    <p class="movie-overview">A young street magician is left to take care of his little sister after his mother's passing and turns to drug dealing in the Los Angeles party scene to keep a roof over their heads. When he gets into trouble with his supplier, his sister is kidnapped and he is forced to rely on both his sleight of hand and brilliant mind to save her.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="c38r-SAnTWM" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/tWqifoYuwLETmmasnGHO7xBjEtt.jpg" width="220" height="342">
-    <h2>Beauty and the Beast</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="c38r-SAnTWM" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/tWqifoYuwLETmmasnGHO7xBjEtt.jpg" width="220" height="342">
+    <h2 class="movie-title">Beauty and the Beast</h2>
+    <p class="movie-overview">A live-action adaptation of Disney's version of the classic tale of a cursed prince and a beautiful young woman who helps him break the spell.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="PmUL6wMpMWw" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/uZwnaMQTdwZz1kwtrrU3IOqxnDu.jpg" width="220" height="342">
-    <h2>Red Sparrow</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="PmUL6wMpMWw" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/uZwnaMQTdwZz1kwtrrU3IOqxnDu.jpg" width="220" height="342">
+    <h2 class="movie-title">Red Sparrow</h2>
+    <p class="movie-overview">Prima ballerina Dominika Egorova faces a bleak and uncertain future after she suffers an injury that ends her career. She soon turns to Sparrow School, a secret intelligence service that trains exceptional young people to use their minds and bodies as weapons. Egorova emerges as the most dangerous Sparrow after completing the sadistic training process. As she comes to terms with her new abilities, Dominika meets a CIA agent who tries to convince her that he is the only person she can trust.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="hb8WDATVB6A" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/As8WTtxXs9e3cBit3ztTf7zoRmm.jpg" width="220" height="342">
-    <h2>Olaf's Frozen Adventure</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="hb8WDATVB6A" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/As8WTtxXs9e3cBit3ztTf7zoRmm.jpg" width="220" height="342">
+    <h2 class="movie-title">Olaf's Frozen Adventure</h2>
+    <p class="movie-overview">Olaf is on a mission to harness the best holiday traditions for Anna, Elsa, and Kristoff.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="dZOaI_Fn5o4" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg" width="220" height="342">
-    <h2>Blade Runner 2049</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="dZOaI_Fn5o4" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg" width="220" height="342">
+    <h2 class="movie-title">Blade Runner 2049</h2>
+    <p class="movie-overview">Thirty years after the events of the first film, a new blade runner, LAPD Officer K, unearths a long-buried secret that has the potential to plunge what's left of society into chaos. K's discovery leads him on a quest to find Rick Deckard, a former LAPD blade runner who has been missing for 30 years.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Jit3YhGx5pU" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/vgvw6w1CtcFkuXXn004S5wQsHRl.jpg" width="220" height="342">
-    <h2>Three Billboards Outside Ebbing, Missouri</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="Jit3YhGx5pU" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/vgvw6w1CtcFkuXXn004S5wQsHRl.jpg" width="220" height="342">
+    <h2 class="movie-title">Three Billboards Outside Ebbing, Missouri</h2>
+    <p class="movie-overview">After seven months have passed without a culprit in her daughter's murder case, Mildred Hayes makes a bold move, painting three signs leading into her town with a controversial message directed at Bill Willoughby, the town's revered chief of police. When his second-in-command Officer Jason Dixon, an immature mother's boy with a penchant for violence, gets involved, the battle between Mildred and Ebbing's law enforcement is only exacerbated.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="z4nJX8snP4s" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/jV8wnk3Jgz6f7degmT3lHNGI2tK.jpg" width="220" height="342">
-    <h2>Fifty Shades of Grey</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="z4nJX8snP4s" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/jV8wnk3Jgz6f7degmT3lHNGI2tK.jpg" width="220" height="342">
+    <h2 class="movie-title">Fifty Shades of Grey</h2>
+    <p class="movie-overview">When college senior Anastasia Steele steps in for her sick roommate to interview prominent businessman Christian Grey for their campus paper, little does she realize the path her life will take. Christian, as enigmatic as he is rich and powerful, finds himself strangely drawn to Ana, and she to him. Though sexually inexperienced, Ana plunges headlong into an affair -- and learns that Christian's true sexual proclivities push the boundaries of pain and pleasure.</p>
 </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Q0CbN8sfihY" data-toggle="modal" data-target="#trailer">
-    <img src="https://image.tmdb.org/t/p/w185/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg" width="220" height="342">
-    <h2>Star Wars: The Last Jedi</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="Q0CbN8sfihY" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="https://image.tmdb.org/t/p/w185/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg" width="220" height="342">
+    <h2 class="movie-title">Star Wars: The Last Jedi</h2>
+    <p class="movie-overview">Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.</p>
 </div>
 
+        </div>
     </div>
   </body>
 </html>

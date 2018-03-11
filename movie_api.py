@@ -29,7 +29,7 @@ def get_popular_movies():
     # Convert result into list of Movie objects
     for movie in popular_movie_list['results']:
         if 'trailer_youtube_url' in movie:
-            movie_list.append(media.Movie(movie['title'], 'https://image.tmdb.org/t/p/w185' + movie['poster_path'], movie['trailer_youtube_url']))           
+            movie_list.append(media.Movie(movie['title'], movie['overview'], 'https://image.tmdb.org/t/p/w185' + movie['poster_path'], movie['trailer_youtube_url']))           
 
     return movie_list
 

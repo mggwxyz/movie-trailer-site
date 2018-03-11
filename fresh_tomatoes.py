@@ -9,7 +9,7 @@ main_page_head = '''
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Fresh Tomatoes!</title>
+    <title>Movie Trailer Website</title>
 
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -19,6 +19,7 @@ main_page_head = '''
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            background: #ed5050;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -35,13 +36,40 @@ main_page_head = '''
             width: 100%;
             height: 100%;
         }
+        .movie-tile-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        @media screen and (max-width: 1200px) {
+            .movie-tile-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+         @media screen and (max-width: 600px) {
+            .movie-tile-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
         .movie-tile {
+            background: #ffffff;
+            transition: 0.5s;
+            transform: scale(1);
             margin-bottom: 20px;
-            padding-top: 20px;
+            padding: 20px;
+            box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.6);
+            border-radius: 8px;
         }
         .movie-tile:hover {
-            background-color: #EEE;
             cursor: pointer;
+            transform: scale(0.99);
+            box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.6);
+        }
+        .movie-title {
+            text-align: left;
+        }
+        .movie-overview {
+            text-align: left;
         }
         .scale-media {
             padding-bottom: 56.25%;
@@ -104,16 +132,18 @@ main_page_content = '''
 
     <!-- Main Page Content -->
     <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <a class="navbar-brand" href="#">Movie Trailer Website</a>
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      {movie_tiles}
+        <div class="movie-tile-container">
+            {movie_tiles}
+        </div>
     </div>
   </body>
 </html>
@@ -122,9 +152,10 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+    <img class="movie-poster" src="{poster_image_url}" width="220" height="342">
+    <h2 class="movie-title">{movie_title}</h2>
+    <p class="movie-overview">{movie_overview}</p>
 </div>
 '''
 
@@ -144,6 +175,7 @@ def create_movie_tiles_content(movies):
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
+            movie_overview=movie.overview,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id
         )
