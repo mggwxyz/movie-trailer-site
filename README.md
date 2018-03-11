@@ -25,7 +25,13 @@ Clone the git repository into a directory using a bash terminal
 git clone https://github.com/mggwxyz/movie-trailer-website.git
 ````
 
-> In order to run this project, you must have python set up on your computer.
+> In order to run this project, you must have Python 3 set up on your computer with the requests module installed.
+
+Install the requests module if you don't have it
+
+```bash
+pip3 install requests
+```
 
 ## Running the project
 
@@ -38,7 +44,7 @@ cd movie-trailer-website
 Then, run the following command to launch the website in your browser
 
 ```bash
-python  entertainment_center.py
+python3  entertainment_center.py
 ```
 
 ## Resource Links

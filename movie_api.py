@@ -1,9 +1,4 @@
-"""
-This module gets the movie lists from The Movie Database
-"""
-
 import requests
-import pprint
 import media
 
 TMDB_KEY = '4f9ab9ab6f23cfad18b769caedf78b8d'
@@ -28,13 +23,11 @@ def get_popular_movies():
                 if(video_result['site'] == 'YouTube' and video_result['type'] == 'Trailer'):
                     video_url = 'https://www.youtube.com/watch?v=' + video_result['key']
                     result['trailer_youtube_url'] = video_url
-                    print(result)
                     break
     movie_list = []
 
     # Convert result into list of Movie objects
     for movie in popular_movie_list['results']:
-        pprint.pprint(movie)
         if 'trailer_youtube_url' in movie:
             movie_list.append(media.Movie(movie['title'], 'https://image.tmdb.org/t/p/w185' + movie['poster_path'], movie['trailer_youtube_url']))           
 
