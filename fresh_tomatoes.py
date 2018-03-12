@@ -1,3 +1,7 @@
+'''
+This file creates index.html for movie page
+'''
+
 import webbrowser
 import os
 import re

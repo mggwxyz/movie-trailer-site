@@ -1,12 +1,13 @@
-import media
+"""Module for launching movie website"""
+
 import fresh_tomatoes
 import movie_api
 
-# Instatiant movie list
-movie_list = []
+# Instantiate movie list
+MOVIE_LIST = []
 
 # Add movies to movie list
-movie_list = movie_api.get_popular_movies()
+MOVIE_LIST = movie_api.get_popular_movies()
 
 # Open up list of movies
-fresh_tomatoes.open_movies_page(movie_list)
+fresh_tomatoes.open_movies_page(MOVIE_LIST)
