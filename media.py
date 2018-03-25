@@ -7,25 +7,25 @@ class Movie:
     
     Attributes
     ----------
-    title : string
+    title : str
         The title of the movie
-    overview : string 
+    overview : str 
         The overview describing the movie
-    poster_image_url : string
+    poster_image_url : str
         The url for the image of the movie's poster
-    trailer_youtube_url : string
-        The url for the movie's youtube trailer
+    trailer_youtube_url : str
+        The url slug for the movie's youtube trailer
         
     Parameters
-        ----------
-        title : string
-            The title of the movie
-        overview : string 
-            The overview describing the movie
-        poster_image_url : string
-            The url for the image of the movie's poster
-        trailer_youtube_url : string
-            The url for the movie's youtube trailer
+    ----------
+    title : str
+        The title of the movie
+    overview : str 
+        The overview describing the movie
+    poster_image_url : str
+        The url for the image of the movie's poster
+    trailer_youtube_url : str
+        The url slug for the movie's youtube trailer
             
     """
     
