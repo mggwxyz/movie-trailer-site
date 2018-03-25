@@ -1,12 +1,26 @@
+"""Module which contains function that returns popular movie list"""
 import requests
 import media
 
 TMDB_KEY = '4f9ab9ab6f23cfad18b769caedf78b8d'
-BASE_URL = 'https://api.themoviedb.org/3'
-YT_BASE_URL = 'https://www.youtube.com/watch?v='
+"""str: The key necessary to query The Movie Database API"""
 
+BASE_URL = 'https://api.themoviedb.org/3'
+"""str: The base url for The Movie Database API"""
+
+YT_BASE_URL = 'https://www.youtube.com/watch?v='
+"""str: The base youtube url which the trailers will be played from"""
 
 def get_popular_movies():
+    """Function that fetch popular movies and informatio about them to be displayed on the website
+    
+    Returns
+    -------
+    obj:`list` of :obj:`Movie`
+        The list of movies popular movies to be displayed on the webpage
+    
+    """
+    
     SP = {'api_key': TMDB_KEY, 'sort_by': 'popularity.desc'}
     VP = {'api_key': TMDB_KEY, 'append_to_response': 'videos'}
 
