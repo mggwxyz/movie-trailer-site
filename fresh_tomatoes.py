@@ -188,7 +188,7 @@ def create_movie_tiles_content(movies):
 
 def open_movies_page(movies):
     # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+    output_file = open('index.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(
@@ -199,5 +199,5 @@ def open_movies_page(movies):
     output_file.close()
 
     # open the output file in the browser (in a new tab, if possible)
-    url = os.path.abspath(output_file.name)
-    webbrowser.open('file://' + url, new=2)
+    # url = os.path.abspath(output_file.name)
+    # webbrowser.open('file://' + url, new=2)
