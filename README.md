@@ -49,5 +49,5 @@ python3  entertainment_center.py
 
 ## Resource Links
 
-[Udacity Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004)
-[Source Code](https://github.com/mggwxyz/movie-trailer-website)
+- [Udacity Full Stack Web Developer Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004)
+- [Source Code](https://github.com/mggwxyz/movie-trailer-website)
