@@ -44,7 +44,7 @@ cd movie-trailer-website
 Then, run the following command to launch the website in your browser
 
 ```bash
-python3  entertainment_center.py
+python3 entertainment_center.py
 ```
 
 ## Resource Links
